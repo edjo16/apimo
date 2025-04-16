@@ -1,0 +1,28 @@
+{
+  "name": "directus-extension-change",
+  "description": "Please enter a description for your extension",
+  "icon": "extension",
+  "version": "1.0.0",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-endpoint"
+  ],
+  "type": "module",
+  "directus:extension": {
+    "type": "endpoint",
+    "path": "../extensions/endpoints/change/index.js",
+    "source": "src/index.ts",
+    "host": "^10.1.5"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "10.1.5",
+    "@types/node": "^20.4.1",
+    "typescript": "^5.1.6"
+  }
+}

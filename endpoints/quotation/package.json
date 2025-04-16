@@ -1,0 +1,37 @@
+{
+	"name": "directus-extension-quotation",
+	"description": "Please enter a description for your extension",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-endpoint"
+	],
+	"type": "module",
+	"directus:extension": {
+		"type": "endpoint",
+		"path": "../../extensions/endpoints/quotation/index.js",
+		"source": "src/index.ts",
+		"host": "^10.2.0"
+	},
+	"scripts": {
+		"build-docker": "docker compose down && rimraf ../../extensions/endpoints/quotation && directus-extension build && docker compose up",
+		"build": "rimraf ../../extensions/endpoints/quotation && directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "10.2.0",
+		"@types/big.js": "^6.2.2",
+		"@types/node": "^20.10.5",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"big.js": "^6.2.1",
+		"jspdf": "^2.5.1",
+		"jspdf-autotable": "^3.8.1",
+		"moment": "^2.30.1",
+		"yup": "^1.3.3"
+	}
+}
